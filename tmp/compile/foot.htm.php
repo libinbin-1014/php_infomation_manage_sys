@@ -4,7 +4,7 @@
   <hr>
 
   <footer>
-<p>&nbsp;&nbsp; Powered by <a href="http://bbs.emlsoft.com/" target="_blank">emlSoft</a> <?php echo $this->_var['cfg']['version']; ?> 2013-2018 Some rights reserved</p>
+<p>九原供电分局智慧工会管理系统</p>
   </footer>
 
 </div>

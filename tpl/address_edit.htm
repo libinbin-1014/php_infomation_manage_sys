@@ -36,6 +36,13 @@
           </div>
 
           <div class="control-group">
+              <label for="input01" class="control-label">手&nbsp;&nbsp;&nbsp;机：</label>
+              <div class="controls">
+                  <input type="text" value="<!--{$row.phone}-->"  id="input01" name="phone" class="input-xlarge" >
+              </div>
+          </div>
+
+          <div class="control-group">
               <label for="input01" class="control-label">民&nbsp;&nbsp;&nbsp;族：</label>
               <div class="controls">
                   <input type="text" value="<!--{$row.nation}-->"  id="input01" name="nation" class="input-xlarge" >
@@ -75,10 +82,10 @@
               <div class="controls">
                   <!--<input type="text" id="input01"  class="input-xlarge" name="edu">-->
                   <th><select  name ="edu">
-                      <option value="0">小学</option>
+                      <option value="0" >小学</option>
                       <option value="1">初中</option>
-                      <option value="2">高中</option>
-                      <option value="3">大专</option>
+                      <option value="2" >高中</option>
+                      <option value="3" >大专</option>
                       <option value="4">本科</option>
                       <option value="5">研究生</option>
                       <option value="6">博士</option></select>

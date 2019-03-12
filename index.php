@@ -35,6 +35,7 @@ $user_arr=$db->fetchAll();
 foreach($user_arr as $key=>$val){
     $user_list[$user_arr[$key][id]]=$user_arr[$key][username];	 //用户数组
 }
+
 //执行页面
 switch ($action){
     case "":
@@ -43,6 +44,7 @@ switch ($action){
         break;
 
     case "address":
+        if(!isLogin()){exit($lang_cn['rabc_is_login']);} //判断是否登录
         include('action/action.address.php');     //链接
         break;
 
@@ -50,7 +52,7 @@ switch ($action){
         include('action/action.user.php');      //用户
         break;
     default:
-        echo "404!";
+        if(!isLogin()){exit($lang_cn['rabc_is_login']);} //判断是否登录
 
 }
 

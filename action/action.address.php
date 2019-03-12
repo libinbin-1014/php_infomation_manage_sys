@@ -121,25 +121,35 @@ if($do=="updata"){
 	$id = _RunMagicQuotes($_POST[id]);
 	$name = _RunMagicQuotes($_POST[name]);
 	$sex = _RunMagicQuotes($_POST[sex]);
-	$tel = _RunMagicQuotes($_POST[tel]);
+	$nation = _RunMagicQuotes($_POST[nation]);
 	$phone = _RunMagicQuotes($_POST[phone]);
-	$email = _RunMagicQuotes($_POST[email]);
-	$qq = _RunMagicQuotes($_POST[qq]);
-	$deparyment = _RunMagicQuotes($_POST[deparyment]);
-	$position = _RunMagicQuotes($_POST[position]);
+	$duty = _RunMagicQuotes($_POST[duty]);
+	$idnumber = _RunMagicQuotes($_POST[idnumber]);
+	$birthday = _RunMagicQuotes($_POST[birthday]);
+	$edu = _RunMagicQuotes($_POST[edu]);
 	$address = _RunMagicQuotes($_POST[address]);
-	
+	$title = _RunMagicQuotes($_POST[title]);
+	$title_date = _RunMagicQuotes($_POST[title_date]);
+	$skill_level = _RunMagicQuotes($_POST[skill_level]);
+	$speciality = _RunMagicQuotes($_POST[speciality]);
+
     if(!$id){echo error($msg);exit;}
 	$updated_at= time();
 	$sql="update eml_address_list SET 
 	`name` = '$name',
 	`sex` = '$sex',
-	`deparyment` = '$deparyment',
-	`position` = '$position',
 	`phone` = '$phone',
-	`tel` = '$tel',
-	`email` = '$email',
 	`address` = '$address',
+	`nation` = '$nation',
+	`duty` = '$duty',
+	`idnumber` = '$idnumber',
+	`birthday` = '$birthday',
+	`edu` = '$edu',
+	`title` = '$title',
+	`title_date` = '$title_date',
+	`skill_level` = '$skill_level',
+	`speciality` = '$speciality',
+	
 	`updated_at` = '$updated_at' where `id` ='$id' limit 1 ;";
 	
 	if($db->query($sql)){echo success($msg,"?action=address");}else{echo error($msg);}	

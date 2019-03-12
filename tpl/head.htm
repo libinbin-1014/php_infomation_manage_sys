@@ -121,9 +121,8 @@
 		<span style="color:#FFFFFF;">&nbsp;<!--{$smarty.session.username}--></span>
 		</p>
 		<ul class="nav">
-		  <!--<li><a href="&lt;!&ndash;{$cfg.website}&ndash;&gt;"><i class="icon-home icon-white"></i> HOME</a></li>-->
-		  
-		  
+		  <li><a href="<!--{$cfg.website}-->"><i class="icon-home icon-white"></i> HOME</a></li>
+
 		  <li <!--{if strtolower($smarty.get.action) == 'adress'}-->class="active"<!--{/if}-->><a href="?action=address"><i class="icon-book icon-white"></i> 通讯录管理</a></li>
 			
 			
