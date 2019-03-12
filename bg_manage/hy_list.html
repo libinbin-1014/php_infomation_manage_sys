@@ -1,0 +1,149 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" >
+<title>会议列表</title>
+<link rel="stylesheet" type="text/css" href="Assets/css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="Assets/css/common.css"/>
+<link rel="stylesheet" type="text/css" href="Assets/css/thems.css">
+<script type="text/javascript" src="Assets/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//自适应屏幕宽度
+	window.onresize=function(){ location=location }; 
+	
+	var main_h = $(window).height();
+	$('.hy_list').css('height',main_h-45+'px');
+	
+	var search_w = $(window).width()-40;
+	$('.search').css('width',search_w+'px');
+	//$('.list_hy').css('width',search_w+'px');
+});
+</script>
+<!--框架高度设置-->
+</head>
+
+<body onLoad="Resize();">
+<div id="right_ctn">
+	<div class="right_m">
+		<!--会议列表-->
+        <div class="hy_list">
+        	<div class="box_t">
+            	<span class="name">会员列表</span>
+                <!--当前位置-->
+                <div class="position">
+                	<a href=""><img src="Assets/images/icon5.png" alt=""/></a>
+                    <a href="">首页</a>
+                    <span><img src="Assets/images/icon3.png" alt=""/></span>
+                    <a href="">会员信息</a>
+                    <span><img src="Assets/images/icon3.png" alt=""/></span>
+                    <a href="">会员列表</a>
+                </div>
+                <!--当前位置-->
+            </div>
+            <!--查询-->
+            <div class="search">
+            	<span>按会员名称查询：</span>
+                <div class="s_text"><input name="" type="text"></div>
+                <a href="" class="btn">查询</a>
+            </div>
+            <!--查询-->
+            <div class="space_hx">&nbsp;</div>
+            <!--列表-->
+            <form action="" method="post">
+            <table cellpadding="0" cellspacing="0" class="list_hy">
+              <tr>
+                <th class="xz" scope="col">选择</th>
+                <!--<th scope="col"><div>名称<a href="" class="up">&nbsp;</a><a href="" class="down">&nbsp;</a></div></th>-->
+                  <th scope="col">名称</th>
+                <th scope="col">性别</th>
+                <th scope="col">联系方式</th>
+                <th scope="col">名族</th>
+                <th scope="col">职务</th>
+                <th scope="col">身份证号</th>
+                <th scope="col">出生月份</th>
+                <th scope="col">居住地</th>
+                <th scope="col">文化程度</th>
+                <th scope="col">职称</th>
+                <th scope="col">职称评定时间</th>
+                <th scope="col">技能鉴定等级</th>
+                  <th scope="col">特长</th>
+              </tr>
+                <?php
+                    include_once('../login/connect.php');
+                    $result = get_all_user($con);
+                    while($row = mysqli_fetch_row($result)){
+                    ?>
+                <tr>
+                    <td class="xz"><input name="" type="checkbox" value=""></td>
+                    <td><?php print_r($row[0]); ?></td>
+                    <td><?php echo $row[1]; ?></td>
+                </tr>
+                <?php
+                 }
+                ?>
+              <tr>
+                <td class="xz"><input name="" type="checkbox" value=""></td>
+                  <td>李彬彬</td>
+                  <td class="zt">男</td>
+                  <td>188998899</td>
+                  <td>汉</td>
+                  <td>搬砖工</td>
+                  <td>130434199****130434199****</td>
+                  <td>1990-10-14</td>
+                  <td>内蒙古包头供电局金隅如何圆202号楼2单元123034室</td>
+                  <td>小学</td>
+                  <td>群众</td>
+                  <td>2005-05-09</td>
+                  <td>高级工程师/配网技师/变电站值班员技师</td>
+                  <td>xxx</td>
+              </tr>
+                <tr>
+                    <td class="xz"><input name="" type="checkbox" value=""></td>
+                <td>宁舰</td>
+                <td class="zt">男</td>
+                <td>1999999999</td>
+                <td>汉</td>
+                <td>局长</td>
+                <td>130434199****</td>
+                <td>1990-10-14</td>
+                <td>内蒙古包头供电局</td>
+                <td>小学</td>
+                <td>群众</td>
+                <td>2005-05-09</td>
+                <td>高级工程师</td>
+                    <td>xxx</td>
+                </tr>
+            </table>
+            <!--列表-->
+            <!--右边底部-->
+            <div class="r_foot">
+            	<div class="r_foot_m">
+            	<span>
+                	<input name="" type="checkbox" value="">
+                    <em>全部选中</em>
+                </span>
+                <a href="" class="btn">删除</a>
+                <a href="" class="btn">刷新</a>
+                <!--分页-->
+                <div class="page">
+                	<a href="" class="prev"><img src="Assets/images/icon7.png" alt=""/></a>
+                    <a class="now">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                    <a href="">5</a>
+                    <a href="">6</a>
+                    <a href="" class="next"><img src="Assets/images/icon8.png" alt=""/></a>
+                </div>
+                <!--分页-->
+                </div>
+            </div>
+            </form>
+            <!--右边底部-->
+        </div>
+        <!--会议列表-->
+    </div>
+</div>
+</body>
+</html>

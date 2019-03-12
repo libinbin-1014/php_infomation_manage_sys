@@ -1,0 +1,75 @@
+<!--{include file="head.htm"}-->
+<!--{include file="nav.htm"}-->
+
+<div class="span11">
+		  <div class="page-header">
+            <h3><!--{$title}--></h3>
+          </div>
+
+			<form class="form-search" action="" method="post">
+			{if $smarty.session.roleid == "1" }	
+			<a href="?action=user&do=new" class="btn btn-primary pull-right"><i class="icon-pencil icon-white"></i> 新建</a>
+			{else}
+		     
+		    {/if}		
+			
+			<input type="text" name="kewords" class="input-small" value="<!--{$smarty.request.kewords}-->"  placeholder="关键词">	
+			<!--{$select_userlist}-->	
+			<input type="text" name="time_start" value="<!--{$smarty.request.time_start}-->"  id="datepicker" placeholder="开始时间" class="input-small hidden-phone"/>
+			- <input type="text" name="time_over" value="<!--{$smarty.request.time_over}-->"  id="datepicker2" placeholder="结束时间" class="input-small hidden-phone"/>
+			<button type="submit" class="btn"><i class="icon-search"></i> 查询</button>
+			<a href="" class="btn hidden-phone"><i class="icon-th-list"></i> 全部</a>
+			<button type="reset" class="btn"><i class="icon-repeat"></i> 重置</button>
+			</form> 
+          <div class="row-fluid">
+            <div class="span12">
+
+				<table width="100%" class="table table-bordered table-striped">
+					<thead>
+					  <tr>
+						<th width="32">昵称</th>
+						<th width="42">姓名</th>
+						<th width="47">用户组</th>
+						<th width="90" class="hidden-phone">创建时间</th>
+						<th width="33">操作</th>
+					  </tr>
+					</thead>
+					<tbody>
+					 
+			<!--{foreach from=$list item=row}-->
+				<tr>
+					<td><!--{$row.username}--></td>
+					<td><!--{$row.name}--></td>
+					<td>
+					<!--{if $row.roleid == "2" }-->普通用户<!--{/if}-->
+					<!--{if $row.roleid == "1" }-->管理员<!--{/if}-->
+					</td>
+					<td class="hidden-phone"><!--{$row.created_at|date_format:"%Y-%m-%d"}--></td>
+					<td>
+{if $smarty.session.roleid == "1" }	
+		<a class="btn btn-small" href="?action=user&do=edit&id=<!--{$row.id}-->"><i class="icon-edit"></i> 编辑</a>	
+		<a class="btn btn-small" href="?action=user&do=del&id=<!--{$row.id}-->" onclick="if(!confirm( '确认要删除吗? ')){return false;}"><i class="icon-trash"></i> 删除</a>
+{else}
+无权限
+{/if}		
+					</td>
+				</tr>			
+			<!--{/foreach}-->
+ 
+					</tbody>
+				  </table>
+				  
+				<div class="pagination pagination-centered">
+					  <ul class="">
+						<li><span class="btn">共<!--{$total}-->条</span></li>
+						<!--{$page}-->
+					 </ul>
+				</div>
+	  
+            </div><!--/span-->
+          </div><!--/row-->
+		  
+		  
+        </div><!--/span-->
+
+<!--{include file="foot.htm"}-->

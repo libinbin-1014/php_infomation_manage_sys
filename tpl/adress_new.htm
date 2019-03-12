@@ -1,0 +1,141 @@
+<!--{include file="head.htm"}-->
+<!--{include file="nav.htm"}-->
+
+<div class="span12">
+	  
+		  <div class="page-header">
+            <h3>新建通讯录</h3>
+          </div>
+		  
+          <div class="row-fluid">
+            <div class="span12">
+	  
+	  
+	  
+	  <form class="form-horizontal" method="post" action="?action=address&do=add" align="left">
+				  <?php $module=mt_rand(100000,999999);?>
+			 <input type="hidden" name="module" value="<?php echo $module;?>"/>
+			 <input type="hidden" name="timestamp" value="<?php echo time();?>"/>
+			 <input type="hidden" name="token" value="<?php echo md5($module.'#$@%!^*'.time());?>"/>
+
+			  <div class="control-group">
+            <label for="input01" class="control-label">姓&nbsp;&nbsp;&nbsp;名：</label>
+            <div class="controls">
+              <input type="text" id="input01" class="input-xlarge" name="name">
+            </div>
+          </div>
+
+		    <div class="control-group">
+            <label for="input01" class="control-label">性&nbsp;&nbsp;&nbsp;别：</label>
+           <div class="controls">
+              <label class="checkbox inline">
+                <input type="radio" checked="checked" name="sex" value="男" /> 男
+              </label>
+              <label class="checkbox inline">
+                <input type="radio" name="sex" value="女" /> 女
+              </label>
+            </div>
+          </div>
+
+		  <div class="control-group">
+            <label for="input01" class="control-label">手&nbsp;&nbsp;&nbsp;机：</label>
+            <div class="controls">
+              <input type="text" id="input01" name="phone" class="input-xlarge" >
+            </div>
+          </div>
+
+          <div class="control-group">
+              <label for="input01" class="control-label">民&nbsp;&nbsp;&nbsp;族：</label>
+              <div class="controls">
+                  <input type="text" id="input01" name="nation" class="input-xlarge" >
+              </div>
+          </div>
+
+		  <div class="control-group">
+            <label for="input01" class="control-label">职&nbsp;&nbsp;&nbsp;务：</label>
+            <div class="controls">
+              <input type="text" id="input01" name="duty" class="input-xlarge">
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="input01" class="control-label">身份证号：</label>
+            <div class="controls">
+              <input type="text" id="input01" class="input-xlarge" name="idnumber">
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <label for="input01" class="control-label">出生月份：</label>
+            <div class="controls">
+                <input class="hidden-phone" type="text" name="birthday" value="" id="datepicker" placeholder="出生月份">
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <label for="input01" class="control-label">住&nbsp;&nbsp;&nbsp;址：</label>
+            <div class="controls">
+              <textarea rows="3" id="textarea"  class="input-xlarge" name="address"></textarea>
+            </div>
+          </div>
+
+          <div class="control-group">
+              <label for="input01" class="control-label">文化程度：</label>
+              <div class="controls">
+                  <!--<input type="text" id="input01"  class="input-xlarge" name="edu">-->
+                  <th><select name ="edu">
+                      <option value="0">小学</option>
+                      <option value="1">初中</option>
+                      <option value="2">高中</option>
+                      <option value="3">大专</option>
+                      <option value="4" selected="selected">本科</option>
+                      <option value="5">研究生</option>
+                      <option value="6">博士</option></select>
+                  </th>
+              </div>
+          </div>
+
+          <div class="control-group">
+              <label for="input01" class="control-label">职&nbsp;&nbsp;&nbsp;称：</label>
+              <div class="controls">
+                  <input type="text" id="input01"  class="input-xlarge" name="title">
+              </div>
+          </div>
+
+          <div class="control-group">
+              <label for="input01" class="control-label">职称评定时间：</label>
+              <div class="controls">
+                  <input class="hidden-phone" type="text" name="title_date" value="" id="datepicker2" placeholder="评定时间">
+              </div>
+          </div>
+
+          <div class="control-group">
+              <label for="input01" class="control-label">技能鉴定等级：</label>
+              <div class="controls">
+                  <input type="text" id="input01"  class="input-xlarge" name="skill_level">
+              </div>
+          </div>
+
+          <div class="control-group">
+              <label for="input01" class="control-label">特&nbsp;&nbsp;&nbsp;长：</label>
+              <div class="controls">
+                  <textarea rows="3" id="textarea"  class="input-xlarge" name="speciality"></textarea>
+              </div>
+          </div>
+
+			<div class="form-actions">
+            <button class="btn btn-primary" type="submit">保存</button>
+			   <a class="btn" href="?action=address"><i class="icon-share"></i> 返回</a>		
+          </div>   	
+      </form>
+		  
+		  
+	   
+            </div><!--/span-->
+          </div><!--/row-->
+		  
+		  
+        </div><!--/span-->
+
+		
+<!--{include file="foot.htm"}-->

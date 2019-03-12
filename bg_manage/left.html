@@ -1,0 +1,181 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" >
+<title>左边导航</title>
+<link rel="stylesheet" type="text/css" href="Assets/css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="Assets/css/common.css"/>
+<script type="text/javascript" src="Assets/js/jquery-1.8.3.min.js"></script>
+<!--框架高度设置-->
+<script type="text/javascript">
+$(function(){
+	$('.sidenav li').click(function(){
+		$(this).siblings('li').removeClass('now');
+		$(this).addClass('now');
+	});
+	
+	$('.erji li').click(function(){
+		$(this).siblings('li').removeClass('now_li');
+		$(this).addClass('now_li');
+	});
+	
+	var main_h = $(window).height();
+	$('.sidenav').css('height',main_h+'px');
+})
+</script>
+<!--框架高度设置-->
+</head>
+
+<body>
+<div id="left_ctn">
+    <ul class="sidenav">
+        <li class="now">
+            <div class="nav_m">
+                <span><a>会员信息</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li class="now_li">
+                    <span><a href="../user/user_list.php" target="main">会员列表</a></span>
+                </li>
+                <li>
+                    <span><a href="../user/create_user.html" target="main">新增会员</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>建功立业</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="zdlb.html" target="main">劳动竞赛</a></span>
+                </li>
+                <li>
+                    <span><a href="hy_list.html" target="main">创新工作</a></span>
+                </li>
+                <li>
+                    <span><a href="sjbf.html" target="main">群众性经济技术创新活动</a></span>
+                </li>
+                <li>
+                    <span><a href="sjbf.html" target="main">女职工工作</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>幸福企业</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="lfpz.html" target="main">职工文化建设</a></span>
+                </li>
+                <li>
+                    <span><a href="fwqkz.html" target="main">送温暖工程</a></span>
+                </li>
+                <li>
+                    <span><a href="lfpz.html" target="main">“互联网+”职工服务</a></span>
+                </li>
+                <li>
+                    <span><a href="fwqkz.html" target="main">劳动保护</a></span>
+                </li> <li>
+                <span><a href="lfpz.html" target="main">普惠制工作</a></span>
+            </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>民主管理</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="mkzt.html" target="main">职工代表大会</a></span>
+                </li>
+                <li>
+                    <span><a href="mkkz.html" target="main">厂务公开</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>工会自身建设</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="xtpz.html" target="main">工会组织建设</a></span>
+                </li>
+                <li>
+                    <span><a href="wlpz.html" target="main">工会干部建设</a></span>
+                </li>
+                <li>
+                    <span><a href="gkpz.html" target="main">工会制度建设</a></span>
+                </li>
+                <li>
+                    <span><a href="dlpz.html" target="main">职工之家建设</a></span>
+                </li>
+                <li>
+                    <span><a href="wlpz.html" target="main">工会工作宣传</a></span>
+                </li>
+                <li>
+                    <span><a href="gkpz.html" target="main">工运理论研究</a></span>
+                </li>
+                <li>
+                    <span><a href="dlpz.html" target="main">其他工作</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>扶贫工作</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="xtrj.html" target="main">档案信息</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a>系统维护</a></span>
+                <i>&nbsp;</i>
+            </div>
+            <ul class="erji">
+                <li>
+                    <span><a href="hy_list.html" target="main">用户信息</a></span>
+                </li>
+                <li>
+                    <span><a href="rjsj.html" target="main">软件升级</a></span>
+                </li>
+                <li>
+                    <span><a href="hfsz.html" target="main">恢复出厂设置</a></span>
+                </li>
+                <li>
+                    <span><a href="sjgl.html" target="main">数据库管理</a></span>
+                </li>
+                <li>
+                    <span><a href="bdcx.html" target="main">数据库补丁程序</a></span>
+                </li>
+                <li>
+                    <span><a href="gnxk.html" target="main">功能许可</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a href="cqxt.html" target="_blank">重启MCU</a></span>
+            </div>
+        </li>
+        <li>
+            <div class="nav_m">
+                <span><a href="tcxt.html" target="_blank">退出系统</a></span>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
