@@ -1,0 +1,2 @@
+# php_infomation_manage_sys
+基于php的信息管理系统
